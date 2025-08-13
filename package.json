@@ -9,6 +9,7 @@
     "build": "next build && next export",
     "deploy": "npm run build && gh-pages -d out"
   },
+  "homepage": "https://martinlapsansky.github.io/portfolio-web/",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^7.0.0",
     "@fortawesome/free-brands-svg-icons": "^7.0.0",
