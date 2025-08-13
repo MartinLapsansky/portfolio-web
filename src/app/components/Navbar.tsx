@@ -1,14 +1,15 @@
 "use client";
 import { useState } from "react";
+import Image from "next/image";
 
 interface NavbarProps {
-  scrollToSection: (ref: React.RefObject<HTMLElement>) => void;
+  scrollToSection: (ref: React.RefObject<HTMLElement | null>) => void;
   refs: {
-    homeRef: React.RefObject<HTMLElement>;
-    aboutRef: React.RefObject<HTMLElement>;
-    skillsRef: React.RefObject<HTMLElement>;
-    projectsRef: React.RefObject<HTMLElement>;
-    recommendationsRef: React.RefObject<HTMLElement>;
+    homeRef: React.RefObject<HTMLElement | null>;
+    aboutRef: React.RefObject<HTMLElement | null>;
+    skillsRef: React.RefObject<HTMLElement | null>;
+    projectsRef: React.RefObject<HTMLElement | null>;
+    contactRef: React.RefObject<HTMLElement | null>;
   };
 }
 
@@ -16,87 +17,90 @@ export default function Navbar({ scrollToSection, refs }: NavbarProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   const menuItems = [
-    { label: "About Me", ref: refs.aboutRef },
+    { label: "About", ref: refs.aboutRef },
     { label: "Skills", ref: refs.skillsRef },
     { label: "Projects", ref: refs.projectsRef },
-    { label: "Recommendations", ref: refs.recommendationsRef },
+    {label: "Contact", ref: refs.contactRef },
   ];
 
   return (
-    <nav className="bg-[#3E5C76] text-white w-full p-4 flex items-center justify-between relative">
+    <section className="bg-[#1d2d44] text-white w-full p-7 flex items-center justify-center relative">
       {/* Identity + contacts */}
-      <div>
-        <p className="font-bold text-lg">Martin Lapsansky</p>
-        <div className="flex items-center text-sm gap-4">
-          <div className="flex items-center gap-2">
-            <img src="/html_finalprojimages/envelope.png" alt="" className="w-5 h-5" />
-            career.lapsansky@gmail.com
-          </div>
-          <div className="flex items-center gap-2">
-            <img src="/html_finalprojimages/phone.png" alt="" className="w-5 h-5" />
-            +13456764598
+      <nav className="flex flex-row items-center justify-between gap-5 w-4/5">
+        <div className="flex flex-col gap-2">
+          <p className="font-bold text-lg">Martin Lapsansky</p>
+          <div className="flex flex-col items-left text-sm gap-1">
+            <div className="flex items-center gap-2">
+              <Image src="/images/envelope.png" alt="" width={30} height={30} />
+              career.lapsansky@gmail.com
+            </div>
+            <div className="flex items-center gap-2">
+              <Image src="/images/phone.png" alt="" width={30} height={30} />
+              +421 904 608 208
+            </div>
           </div>
         </div>
-      </div>
 
-      {/* Desktop Menu */}
-      <div className="hidden md:flex gap-6 items-center">
-        {menuItems.map((item) => (
-          <button
-            key={item.label}
-            className="relative text-lg hover:font-bold after:absolute after:left-0 after:bottom-[-2px] after:w-0 after:h-[2px] after:bg-[#F0EBD8] hover:after:w-full after:transition-all"
-            onClick={() => scrollToSection(item.ref)}
-          >
-            {item.label}
-          </button>
-        ))}
+        {/* Desktop Menu */}
+        <div className="hidden md:flex gap-6 items-center">
+          {menuItems.map((item) => (
+              <button
+                  key={item.label}
+                  className="relative text-2xl hover:font-bold after:absolute after:left-0 after:bottom-[-2px] after:w-0 after:h-[2px] after:bg-[#F0EBD8] hover:after:w-full after:transition-all"
+                  onClick={() => scrollToSection(item.ref)}
+              >
+                {item.label}
+              </button>
+          ))}
+        </div>
         <button
-          className="bg-white text-[#3E5C76] rounded-full px-4 py-2 font-bold hover:scale-105"
-          onClick={() => window.open("/resume.pdf", "_blank", "noopener,noreferrer")}
+            className="bg-white text-2xl text-[#3E5C76] rounded-full px-4 py-2 font-bold hover:scale-120"
+            onClick={() => window.open("/resume.pdf", "_blank", "noopener,noreferrer")}
         >
           Resume
         </button>
-      </div>
 
-      {/* Mobile Hamburger */}
-      <div className="md:hidden">
-        <button
-          aria-expanded={isOpen}
-          aria-controls="mobileMenu"
-          onClick={() => setIsOpen(!isOpen)}
-          className="flex flex-col justify-center items-center w-10 h-10 gap-[4px]"
-          title="Toggle menu"
-        >
+        {/* Mobile Hamburger */}
+        <div className="md:hidden">
+          <button
+              aria-expanded={isOpen}
+              aria-controls="mobileMenu"
+              onClick={() => setIsOpen(!isOpen)}
+              className="flex flex-col justify-center items-center w-15 h-15 gap-[4px]"
+              title="Toggle menu"
+          >
           <span className={
-            "w-7 h-[3px] bg-white transition-transform " + (isOpen ? "rotate-45 translate-y-[6px]" : "")
+              "w-7 h-[3px] bg-white transition-transform " + (isOpen ? "rotate-45 translate-y-[6px]" : "")
           }/>
-          <span className={"w-7 h-[3px] bg-white transition-opacity " + (isOpen ? "opacity-0" : "")}/>
-          <span className={
-            "w-7 h-[3px] bg-white transition-transform " + (isOpen ? "-rotate-45 -translate-y-[6px]" : "")
-          }/>
-        </button>
-      </div>
+            <span className={"w-7 h-[3px] bg-white transition-opacity " + (isOpen ? "opacity-0" : "")}/>
+            <span className={
+                "w-7 h-[3px] bg-white transition-transform " + (isOpen ? "-rotate-45 -translate-y-[6px]" : "")
+            }/>
+          </button>
+        </div>
 
-      {/* Mobile Menu */}
-      {isOpen && (
+        {/* Mobile Menu */}
         <div
-          id="mobileMenu"
-          className="absolute top-full left-0 w-full bg-white text-[#3E5C76] flex flex-col items-center py-4 shadow-md md:hidden"
+            id="mobileMenu"
+            className={`absolute gap-3 top-full left-0 w-full bg-white text-[#3E5C76] flex flex-col items-center py-4 shadow-md md:hidden
+    transform transition-all duration-300 ease-out
+    ${isOpen ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 -translate-y-4 pointer-events-none'}`}
         >
           {menuItems.map((item) => (
-            <button
-              key={item.label}
-              className="text-2xl py-2"
-              onClick={() => {
-                scrollToSection(item.ref);
-                setIsOpen(false);
-              }}
-            >
-              {item.label}
-            </button>
+              <button
+                  key={item.label}
+                  className="text-2xl py-2 cursor-pointer hover:font-bold w-50"
+                  onClick={() => {
+                    scrollToSection(item.ref);
+                    setIsOpen(false);
+                  }}
+              >
+                {item.label}
+              </button>
           ))}
         </div>
-      )}
-    </nav>
+      </nav>
+
+    </section>
   );
 }

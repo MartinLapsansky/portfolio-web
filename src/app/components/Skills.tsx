@@ -17,15 +17,15 @@ export default function Skills() {
         {skills.map((skill) => (
           <div
             key={skill.name}
-            className="flex flex-col items-center border-2 border-gray-300 p-8 rounded-lg hover:scale-110 transition-transform cursor-pointer"
+            className="flex flex-col items-center text-gray-600 border-2 border-gray-300 p-8 rounded-lg hover:scale-110 transition-transform cursor-pointer"
           >
             <img
-              src={`/html_finalprojimages/${skill.img}`}
+              src={`/images/${skill.img}`}
               alt={skill.name}
               className={["object-contain", skill.w, skill.h].join(" ")}
             />
             <h6 className="mt-4 font-semibold">{skill.name}</h6>
-            <p>{skill.years} experience</p>
+            <p className="text-gray-600">{skill.years} experience</p>
           </div>
         ))}
       </div>
