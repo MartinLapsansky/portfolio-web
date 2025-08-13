@@ -1,3 +1,7 @@
+import getConfig from 'next/config';
+
+const { publicRuntimeConfig } = getConfig();
+
 interface AboutProps {
   onExploreMore: () => void;
 }
@@ -31,7 +35,7 @@ export default function About({ onExploreMore }: AboutProps) {
       </div>
       <div className="flex-1">
         <img
-            src="/images/coding.gif"
+            src={`${publicRuntimeConfig.basePath}/images/coding.gif`}
             alt="Animated GIF"
             className="w-full h-auto"
         />

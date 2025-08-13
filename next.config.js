@@ -1,16 +1,13 @@
-/**
- * @type {import('next').NextConfig}
- */
-
 const isProd = process.env.NODE_ENV === 'production';
 
-const nextConfig = {
+module.exports = {
     basePath: isProd ? '/portfolio-web' : '',
+    publicRuntimeConfig: {
+        basePath: isProd ? '/portfolio-web' : '',
+    },
     output: 'export',
     distDir: 'dist',
-    images:{
+    images: {
         unoptimized: true,
     },
 };
-
-module.exports = nextConfig
