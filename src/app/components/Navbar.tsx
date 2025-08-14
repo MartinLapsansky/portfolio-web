@@ -34,12 +34,15 @@ export default function Navbar({ scrollToSection, refs }: NavbarProps) {
           <div className="flex flex-col items-left text-sm gap-1">
             <div className="flex items-center gap-2">
               <Image src={`/images/envelope.png`} alt="" width={30} height={30} />
-              career.lapsansky@gmail.com
+              <a href="mailto:career.lapsansky@gmail.com" className= "hover:underline">
+                career.lapsansky@gmail.com
+              </a>
             </div>
             <div className="flex items-center gap-2">
               <Image src="/images/phone.png" alt="" width={30} height={30} />
-              <span>+421&nbsp;904&nbsp;608&nbsp;208</span>
-            </div>
+              <a href="tel:+421904608208" className="hover:underline">
+                +421&nbsp;904&nbsp;608&nbsp;208
+              </a>            </div>
           </div>
         </div>
 

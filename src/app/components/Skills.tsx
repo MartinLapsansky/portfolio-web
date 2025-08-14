@@ -2,12 +2,15 @@
 const skills = [
   { name: "HTML", years: "3 years", img: "html5.png", w: "w-24", h: "h-24" },
   { name: "CSS", years: "3 years", img: "CSS3.png", w: "w-24", h: "h-24" },
-  { name: "Java", years: "1 year", img: "java.png", w: "w-[60px]", h: "h-[60px]" },
-  { name: "Node.js", years: "2 years", img: "node.png", w: "w-auto", h: "h-[60px]" },
+    { name: "Javascript", years: "2 year", img: "javascript.png", w: "w-30", h: "h-24" },
+    { name: "Typescript", years: "2 year", img: "typescript.png", w: "w-30", h: "h-24" },
+    { name: "React", years: "2 years", img: "react.png", w: "w-[120px]", h: "h-auto" },
+
+    { name: "Node.js", years: "2 years", img: "node.png", w: "w-auto", h: "h-[60px]" },
   { name: "PostgreSQL", years: "2 years", img: "postgresql.png", w: "w-[140px]", h: "h-auto" },
   { name: "MongoDB", years: "2 years", img: "mongodb.png", w: "w-24", h: "h-24" },
-  { name: "React", years: "2 years", img: "react.png", w: "w-[120px]", h: "h-auto" },
   { name: "Next.js", years: "1 year", img: "nextjs.png", w: "w-24", h: "h-24" },
+
 ];
 
 export default function Skills() {
@@ -18,7 +21,7 @@ export default function Skills() {
         {skills.map((skill) => (
           <div
             key={skill.name}
-            className="flex flex-col items-center text-gray-600 border-2 border-gray-300 p-8 rounded-lg hover:scale-110 transition-transform cursor-pointer"
+            className="flex flex-col items-center text-gray-600 border-2 border-gray-300 p-8 rounded-lg hover:scale-110 hover:bg-blue-100 transition-transform cursor-pointer"
           >
             <img
               src={`/images/${skill.img}`}
