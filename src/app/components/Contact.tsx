@@ -106,7 +106,7 @@ const Contact: React.FC = () => {
                     </div>
                 ):null}
 
-                {status === 'success' && <p className="text-green-600 mt-4">Message sent successfully!</p>}
+                {status === 'success' && <p className="text-green-900 mt-4">Message sent successfully!</p>}
                 {status === 'error' && <p className="text-red-600 mt-4">Oops! Something went wrong.</p>}
 
             </form>
