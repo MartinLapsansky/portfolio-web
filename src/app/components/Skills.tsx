@@ -1,6 +1,3 @@
-import getConfig from 'next/config';
-
-const { publicRuntimeConfig } = getConfig();
 
 const skills = [
   { name: "HTML", years: "3 years", img: "html5.png", w: "w-24", h: "h-24" },
@@ -24,7 +21,7 @@ export default function Skills() {
             className="flex flex-col items-center text-gray-600 border-2 border-gray-300 p-8 rounded-lg hover:scale-110 transition-transform cursor-pointer"
           >
             <img
-              src={`${publicRuntimeConfig.basePath}/images/${skill.img}`}
+              src={`/images/${skill.img}`}
               alt={skill.name}
               className={["object-contain", skill.w, skill.h].join(" ")}
             />

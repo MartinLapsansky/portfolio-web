@@ -1,6 +1,4 @@
-import getConfig from 'next/config';
 
-const { publicRuntimeConfig } = getConfig();
 
 interface AboutProps {
   onExploreMore: () => void;
@@ -10,7 +8,7 @@ export default function About({ onExploreMore }: AboutProps) {
   return (
     <div className="flex flex-col md:flex-row items-center w-4/5 mx-auto border-b-4 border-black py-12 gap-8">
       <div className="flex-1">
-        <h1 className="text-5xl text-[#3E5C76] font-bold">
+        <h1 className="leading-15 text-4xl md:text-5xl text-[#3E5C76] font-bold">
           Junior Full Stack <span className="bg-[#F0EBD8] p-2 rounded-2xl">.JS</span> developer
         </h1>
         <p className="text-xl text-gray-600 mt-4">
@@ -35,7 +33,7 @@ export default function About({ onExploreMore }: AboutProps) {
       </div>
       <div className="flex-1">
         <img
-            src={`${publicRuntimeConfig.basePath}/images/coding.gif`}
+            src={`/images/coding.gif`}
             alt="Animated GIF"
             className="w-full h-auto"
         />

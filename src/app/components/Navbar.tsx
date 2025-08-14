@@ -2,6 +2,7 @@
 import { useState } from "react";
 import Image from "next/image";
 
+
 interface NavbarProps {
   scrollToSection: (ref: React.RefObject<HTMLElement | null>) => void;
   refs: {
@@ -23,20 +24,21 @@ export default function Navbar({ scrollToSection, refs }: NavbarProps) {
     {label: "Contact", ref: refs.contactRef },
   ];
 
+
   return (
     <section className="bg-[#1d2d44] text-white w-full p-7 flex items-center justify-center relative">
       {/* Identity + contacts */}
-      <nav className="flex flex-row items-center justify-between gap-5 w-4/5">
+      <nav className="flex flex-row items-center justify-between gap-5 w-full">
         <div className="flex flex-col gap-2">
           <p className="font-bold text-lg">Martin Lapsansky</p>
           <div className="flex flex-col items-left text-sm gap-1">
             <div className="flex items-center gap-2">
-              <Image src="/images/envelope.png" alt="" width={30} height={30} />
+              <Image src={`/images/envelope.png`} alt="" width={30} height={30} />
               career.lapsansky@gmail.com
             </div>
             <div className="flex items-center gap-2">
               <Image src="/images/phone.png" alt="" width={30} height={30} />
-              +421 904 608 208
+              <span>+421&nbsp;904&nbsp;608&nbsp;208</span>
             </div>
           </div>
         </div>
@@ -54,14 +56,14 @@ export default function Navbar({ scrollToSection, refs }: NavbarProps) {
           ))}
         </div>
         <button
-            className="bg-white text-2xl text-[#3E5C76] rounded-full px-4 py-2 font-bold hover:scale-120"
+            className="hidden md:flex bg-white text-2xl text-[#3E5C76] rounded-full px-4 py-2 font-bold hover:scale-120"
             onClick={() => window.open("/resume.pdf", "_blank", "noopener,noreferrer")}
         >
           Resume
         </button>
 
         {/* Mobile Hamburger */}
-        <div className="md:hidden">
+        <div className="ml-5 md:hidden">
           <button
               aria-expanded={isOpen}
               aria-controls="mobileMenu"
