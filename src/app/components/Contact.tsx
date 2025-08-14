@@ -54,7 +54,7 @@ const Contact: React.FC = () => {
   return (
         <section className="flex flex-col w-4/5 px-6 mx-auto lg:px-8 justify-center items-center">
                 <h2 className="text-center text-2xl md:text-4xl font-bold text-[#3E5C76] mb-8">Are you interested in collaboration with me?</h2>
-            <form onSubmit={handleSubmitForm} className="flex flex-col w-full md:w-150 items-center border-black border-2 p-6 rounded-3xl ">
+            <form onSubmit={handleSubmitForm} className="flex flex-col w-90 md:w-150 items-center border-black border-2 p-6 rounded-3xl ">
                 <h3 className="text-2xl font-bold mb-4 text-white">Send me a message.</h3>
                 <fieldset className="flex flex-col flex-wrap w-90 gap-6 items-center ">
 
