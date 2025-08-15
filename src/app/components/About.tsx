@@ -29,17 +29,17 @@ export default function About({ onExploreMore }: AboutProps) {
   return (
       <div
           ref={ref}
-          className="flex flex-col md:flex-row items-center w-4/5 mx-auto border-b-4 border-black py-12 gap-8"
+          className="flex flex-col relative md:flex-row items-center w-4/5 mx-auto border-b-4 border-black py-12 gap-8"
       >
-        <div className="flex-1">
+        <div className="flex-1 relative">
           <h1
-              className={`leading-15 text-4xl md:text-5xl text-[#3E5C76] font-bold transform transition-all duration-700 ease-out
+              className={`relative leading-15 text-4xl md:text-5xl text-[#3E5C76] font-bold transform transition-all duration-700 ease-out
             ${visibleTitle ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-6"}`}
           >
-            Junior Full Stack <span className="bg-[#F0EBD8] p-2 rounded-2xl">.JS</span> developer
+            Junior Full Stack <span className="relative bg-[#F0EBD8] p-2 rounded-2xl">.JS</span> developer
           </h1>
           <p
-              className={`text-xl text-gray-600 mt-4 transform transition-all duration-700 ease-out
+              className={`relative text-xl text-gray-600 mt-4 transform transition-all duration-700 ease-out
             ${visibleText ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
           >
             Hi, I am Martin Lapsansky a computer science graduate from the Technical University of Kosice
