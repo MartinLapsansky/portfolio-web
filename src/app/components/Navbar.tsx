@@ -87,7 +87,7 @@ export default function Navbar({ scrollToSection, refs }: NavbarProps) {
         {/* Mobile Menu */}
         <div
             id="mobileMenu"
-            className={`absolute gap-3 top-full left-0 w-full bg-white text-[#3E5C76] flex flex-col items-center py-4 shadow-md md:hidden
+            className={`absolute gap-3 top-full left-0 w-full bg-[#73aff0] text-[#3E5C76] flex flex-col items-center py-4 shadow-md md:hidden
     transform transition-all duration-300 ease-out
     ${isOpen ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 -translate-y-4 pointer-events-none'}`}
         >
