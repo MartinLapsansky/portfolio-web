@@ -60,7 +60,7 @@ export default function Navbar({ scrollToSection, refs }: NavbarProps) {
         </div>
         <button
             className="hidden md:flex bg-white text-2xl text-[#3E5C76] rounded-full px-4 py-2 font-bold hover:scale-120"
-            onClick={() => window.open("/resume.pdf", "_blank", "noopener,noreferrer")}
+            onClick={() => window.open("/files/resume.pdf", "_blank", "noopener,noreferrer")}
         >
           Resume
         </button>
