@@ -49,6 +49,10 @@ button {
   transition: transform 0.2s;
 }
 
+.override button{
+  background-color: lightblue;
+}
+
 button:hover {
   transform: scale(0.95);
 }
